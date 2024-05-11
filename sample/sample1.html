@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="sample.js"></script>
+</head>
+<body onload="displaylikedprod()">
+    <h2>Liked page</h2>
+    <div id="samplemsg"></div>
+
+    <div id="banner"></div>
+
+    <button onclick="change()">Click</button>
+    
+    
+
+    <style>
+        #banner{
+            width: 200px;
+            height: 200px;
+            background: url(./Assets/Images/banner1.jpg);
+        }
+
+
+
+
+    </style>
+
+
+
+
+
+
+
+    <script>
+        // function changeimg(){
+        //     let index =0;
+        //     let arrnum =[1,2,3]
+        //     let imgdiv = document.getElementsByClassName("banner")
+        //     if(index <= 2){
+        //         imgdiv.src =`./Assets/Images/banner${index}.jpg`
+        //         index ++;
+        //     }
+        //     else{
+        //         index =0;
+        //     }
+        // }
+
+        // setInterval(changeimg,1000);
+        
+        function change(){
+            let index =2;
+            let arrnum =[1,2,3]
+            let imgdiv = document.getElementById("banner")
+            imgdiv.style.background = `url(./Assets/Images/banner${arrnum[index]}.jpg)`;
+            // if(index <=2){
+            //     console.log("hiii")
+                  
+            //       index++;
+
+            // }
+        }
+        var greet ="hi";
+        function greeting(){
+        
+        console.log(greet);
+        }
+
+      greeting();
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+
+
+    
+    
+
+
+
+
+    
+</body>
+</html>

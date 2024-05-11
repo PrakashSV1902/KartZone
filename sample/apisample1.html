@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        
+        //GET
+        function getmethod(){
+            fetch("https://retoolapi.dev/AVkp7v/data",{
+                  method:"GET",
+                  headers: { "Content-Type": "application/json; charset=UTF-8" }
+                })
+
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) =>{
+                console.log(data.length)
+                console.log(data)
+                console.log(data[15])
+                console.log(data[15].id)
+            })
+        }
+
+        // getmethod()
+
+        //POST
+        function postmethod(){
+            fetch("https://retoolapi.dev/AVkp7v/data",{
+                method:"POST",
+                headers: { "Content-Type": "application/json; charset=UTF-8" },
+                body: JSON.stringify({
+                            id: 100,
+                            name: "prakash",
+                            type: "Invoice",
+                            number: 9080,
+                            amount: 120
+                        })
+           })
+
+           .then((response) => {
+                return response.json();
+            })
+
+            .then((data) =>{
+                console.log(data.length)
+                console.log(data)
+                
+                // console.log(data[15])
+                // console.log(data[15].id)
+            })
+
+        }
+
+        // postmethod()
+        getmethod()
+
+        //PUT
+        function putmethod(){
+            fetch("https://retoolapi.dev/AVkp7v/data/15",{
+                method:"PUT",
+                headers: { "Content-Type": "application/json; charset=UTF-8" },
+                body: JSON.stringify({
+                            name: "prakash",
+                            type: "Invoice",
+                            number: 9080,
+                            amount: 120
+                        })
+            })
+            .then((response) => {
+                return response.json();
+            })
+
+            .then((data) =>{
+                console.log(data)
+                
+            })
+
+        }
+        putmethod()
+        getmethod()
+
+        //DELETE 
+        function deletemethod(){
+            fetch("https://retoolapi.dev/AVkp7v/data/10",{
+                method:"DELETE",
+                headers: { "Content-Type": "application/json; charset=UTF-8" }
+            })
+            .then((response) => {
+                return response.json();
+            })
+
+            .then((data) =>{
+                console.log(data)
+                
+            })
+        }
+        deletemethod()
+        getmethod()
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

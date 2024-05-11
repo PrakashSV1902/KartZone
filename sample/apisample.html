@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let account = {
+        id: 1210,
+        name: "prakash",
+        type: "Invoice",
+        amount: 120,
+      };
+
+      fetch("https://retoolapi.dev/l9Dss2/credit", {
+        method: "POST",
+        body: JSON.stringify({
+        id: 1210,
+        name: "prakash",
+        type: "Invoice",
+        amount: 120,
+      }),
+        headers: { "Content-Type": "application/json; charset=UTF-8" },
+      })
+        .then((response) => {
+          {
+            console.log("success");
+            return response.json();
+          }
+        })
+        .then((data) => {
+          console.log(data);
+          getting_data();
+          
+        });
+
+      function getting_data() {
+        console.log("Hi");
+        fetch("https://retoolapi.dev/l9Dss2/credit", {
+          method: "GET",
+          headers: { "Content-Type": "application/json; charset=UTF-8" },
+        })
+          .then((response) => {
+            // if(response && response.ok){
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          });
+      }
+
+      function deleting_data()
+      {
+        fetch("https://retoolapi.dev/l9Dss2/credit/" + 1000, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json; charset=UTF-8" },
+        })
+          .then((response) => {
+            // if(response && response.ok){
+            return response.json();
+          })
+          .then((data) => {
+            alert("Id 100 Deleted");
+            console.log(data);
+            getting_data();
+          });
+      }
+
+      
+        let updated_account = {
+        name: "Oviya",
+        type: "Invoice",
+        amount: 120,
+      }
+     
+      function updating_data(){
+      
+        fetch("https://retoolapi.dev/l9Dss2/credit/" + 1200, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json; charset=UTF-8" },
+          body:JSON.stringify(updating_data)
+        })
+          .then((response) => {
+            // if(response && response.ok){
+            return response.json();
+          })
+          .then((data) => {
+            alert("Id 100 Deleted");
+            console.log(data);
+            getting_data();
+          });
+      }
+      deleting_data();
+
+      
+
+      
+
+
+
+    </script>
+  </body>
+</html>
+var x=1
+var x=2
+
+let x=1
+  x=2

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    NAME : <input type="text" id="name">
+    TYPE : <input type="text" id="type">
+    NUMBER : <input type="text" id="number">
+    AMOUNT : <input type="text" id="amount">
+    <button onclick="postmethod()">add data</button>
+    <br>
+    <button onclick="getmethod()">display all data</button>
+    
+    
+
+
+
+
+
+
+    <script>
+
+         function getinput(){
+            name = document.getElementById("name").value
+            type = document.getElementById("type").value
+            number = document.getElementById("number").value
+            amount = document.getElementById("amount").value
+        }
+
+        
+         function postmethod(){
+            getinput()
+            fetch("https://retoolapi.dev/CWEZrE/emp",{
+                method:"POST",
+                headers: { "Content-Type": "application/json; charset=UTF-8" },
+                body: JSON.stringify({
+                            "name": name,
+                            "type": type,
+                            "number": number,
+                            "amount": amount
+                        })
+            })
+
+            .then((response) => {
+                return response.json();
+            })
+
+            .then((data) =>{
+                console.log(data)
+            })
+        }
+
+
+        function getmethod(){
+            fetch("https://retoolapi.dev/CWEZrE/emp",{
+                method:"GET",
+                headers: { "Content-Type": "application/json; charset=UTF-8" },
+        
+            })
+
+            .then((response) => {
+                return response.json();
+            })
+
+            .then((data) =>{
+                console.log(data)
+                for(let i=0; i< data.length; i++){
+                    console.log(data[i])
+                    // console.log(data[i].name)
+                }
+            })
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

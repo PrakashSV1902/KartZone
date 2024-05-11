@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/18cc03e484.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Header_footer.css">
+</head>
+<body onload="displaycart() ,gettotal()">
+    <div class="container-fluid p-0">
+        <header>
+            <div class="subcontainer1 row" >
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 navsidebar">
+                    <i class="fa-solid fa-bars icons"></i>
+                </div>
+                <nav class="col-11 col-sm-11 col-md-11 col-lg-5 nav1">
+                    <a href="./home.html">HOME</a>
+                    <a href="./men.html">MEN</a>
+                    <a href="./women.html">WOMEN</a>
+                    <a href="./kids.html">KIDS</a>
+                    <a href="./home&living.html">HOME & LIVING</a>
+                    <a href="./beauty.html">BEAUTY</a>
+                </nav>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 navsearchdiv">
+                    <input type="search" placeholder="search" class="navsrc">
+                    <button class="navsrcbtn"><i class="fa-solid fa-magnifying-glass icons"></i></button>
+        
+                </div>
+                <nav class="col-12 col-sm-6 col-md-6 col-lg-3 navicon">
+                    <a href=""><i class="fa-solid fa-bell icons"></i></a>
+                    <a href="./wishlist.html"><i class="fa-solid fa-heart icons"></i></a>
+                    <a href="./cart.html"><i class="fa-solid fa-cart-shopping icons"></i></a>
+                    <a href="./profile.html"><i class="fa-solid fa-user icons"></i></a>
+                </nav>
+            </div>
+            <br>
+            <br>
+            <br>
+        </header>
+        <main>
+            <div class="subcontainer">
+                <h3>Cart</h3>
+                <br>
+                <div class="row">
+                    <table id="carttable" >
+                        <tr id="tableheading">
+                            <td>SL.NO</td>
+                            <td>IMAGE</td>
+                            <td>PRODUCT NAME</td>
+                            <td>PRODUCT PRICE</td>
+                            <td>QUANTITY</td>
+                            <td></td>
+                        </tr>
+                        
+                       
+                        
+                    </table>
+
+                    
+                </div>
+                <div class="row">
+                    <h3 id="resultdiv">Cart Total: <span id="carttotal"></span></h3>
+                    
+                </div>
+                <div class="button">
+                    <button class="btn btn-warning">Proceed to Buy</button>
+                </div>
+                
+                
+            </div>
+            </div>
+            
+        </main>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <div class="subcontainer2" >
+                <div class="subcontainer" >
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <h5>FOLLOW US</h5>
+                                <a href="#"><i class="fa-brands fa-twitter icons"></i></a>
+                                <a href="#"><i class="fa-brands fa-square-instagram icons"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook icons"></i></a>
+                            </div>
+                            <div class="downloadapp">
+                                <h5>Experience App on Mobile</h5>
+                                <img src="./Assets/Images/app_apple.jpeg" alt="" width="80px" height="25px">
+                                <img src="./Assets/Images/app_android.jpeg" alt="" width="80px" height="25px">
+                            </div>
+                        </div>
+                        <div class="col about">
+                            <h5>ABOUT</h5>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Press</a></li>
+                                <li><a href="#">Corporate Information</a></li>
+                            </ul>
+                        </div>
+                        <div class="col help">
+                            <h5>HELP</h5>
+                            <ul>
+                                <li><a href="#">Payments</a></li>
+                                <li><a href="#">Shipping</a></li>
+                                <li><a href="#">Cancellation & returns</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <h5>SUBSCRIBE</h5>
+                            <p>Subscribe to get special offers,free giveaways and once-in-a-lifetime deals</p>
+                            <input type="email" placeholder="Enter your Email"><button>Subscribe</button>
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+            <div class="subcontainer3">
+                <div class="row">
+                    <div class="col copyright">
+                        <p><span>Conditions of use & sale</span><span>Privacy Notice</span><span>Interest-Based-Ads</span></p>
+                        <p>&#169;1996-2024,xyz.com,inc.or its affliates</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <style>
+        .kids_card:hover{
+            box-shadow: 0.5px 0.5px 5px black;
+        }
+        #tableheading td{
+            padding: 25px;
+            font-weight: bold;
+        }
+        #resultdiv{
+            text-align: center;
+        }
+        .button{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
+
+    </style>
+
+    
+
+
+
+
+
+
+
+    <script>
+
+        function displaycart(){
+            
+
+            fetch("https://retoolapi.dev/bDZK3R/cart_products",{
+                        method:"GET",
+                        headers: { "Content-Type": "application/json; charset=UTF-8" },
+                        })
+
+                        .then((response) => {
+                                return response.json();
+                        })
+
+                        .then((data) =>{
+                            
+                            console.log(data)
+                            
+                            for(let i=0; i< data.length+1; i++){
+                
+                                let carttable = document.getElementById("carttable")
+
+                                let carttablerow =  `<tr>
+                                                        <td>${i+1}.</td>
+                                                        <td><img src= ${data[i].image} alt="" width="80px" height="80px"></td>
+                                                        <td>${data[i].prod_name}</td>
+                                                        <td>${data[i].price}</td>
+                                                        <td><input type="number" name="" id="${data[i].prod_name+"1"}" value="1" onchange=" gettotal()" onkeyup="gettotal()"></td>
+                                                        <td><button onclick="Removecartprod('${data[i].prod_name}')">Remove</button></td>
+                                                    </tr>
+                                                    <br>`
+
+
+
+                                carttable.innerHTML += carttablerow ;
+                                              
+
+
+
+
+
+                            }
+                            
+                            
+                        })
+
+                       
+
+
+
+
+
+        }
+
+
+        function gettotal(){
+
+            fetch("https://retoolapi.dev/bDZK3R/cart_products",{
+                        method:"GET",
+                        headers: { "Content-Type": "application/json; charset=UTF-8" },
+                        })
+
+                        .then((response) => {
+                                return response.json();
+                        })
+
+                        .then((data) =>{
+                            let carttotal =0
+                            
+                            
+                            for(let i=0; i< data.length+1; i++){
+
+                                carttotal += (data[i].price * document.getElementById(data[i].prod_name+"1").value);
+                                // console.log(document.getElementById(data[i].prod_name+"1").value)
+                                document.getElementById("carttotal").innerHTML = carttotal
+                                
+                
+                            
+
+                               
+                            }
+                            
+                            
+                            
+                        })
+                        
+                        
+
+
+        }
+        
+
+        function Removecartprod(remproduct){
+            console.log("remove"+ remproduct)
+
+            fetch("https://retoolapi.dev/bDZK3R/cart_products",{
+                        method:"GET",
+                        headers: { "Content-Type": "application/json; charset=UTF-8" },
+                        })
+
+                        .then((response) => {
+                                return response.json();
+                        })
+
+                        .then((data) =>{
+                            console.log(data)
+                            let remprod = data.filter( x =>{
+                                return x.prod_name == remproduct
+                            })
+                            console.log(remprod[0].id)
+
+                            fetch("https://retoolapi.dev/bDZK3R/cart_products/"+remprod[0].id,{
+                                method:"DELETE",
+                                headers: { "Content-Type": "application/json; charset=UTF-8" },
+        
+                            })
+
+                            .then((response) => {
+                                 return response.json();
+                            })
+
+                            .then((data) =>{
+                                console.log(data)
+                                window.location.href= "./cart.html"
+                            
+
+                            })
+
+
+                        })
+
+
+        }
+       
+
+
+        
+        
+    </script>
+    
+</body>
+</html>
