@@ -10,10 +10,10 @@
 </head>
 <body onload="capcha()">
     <div class="container">
-        <div class="row" >
+        <div class="row loginform" >
             <div class=" form" >
                 <h3 id="heading">Login</h3>
-                <div class="tablediv" style="width: 500px; margin: 0px auto;">
+                <div class="tablediv" style=" margin: 0px auto;">
                     <table class="formtable" >
                     
                         <tr>
@@ -116,6 +116,8 @@
             padding: 10px;
             background-color: rgba(224,224,224,0.85);
             border-radius: 5px;
+            width: 500px
+            
         
         }
         .form{
@@ -125,6 +127,21 @@
             background-image: url(./Assets/Images/login_bg.jpg);
             background-attachment: fixed;
             background-size: 95% 100%;
+        }
+
+        
+
+        @media all and (max-width:400px) {
+            .loginform{
+                width: 500px;
+            }
+            .tablediv{
+                margin-top: 200px;
+                scale: 0.9;
+                padding:80px 0px;
+                
+            }
+            
         }
 
 

@@ -10,8 +10,8 @@
 </head>
 <body>
     <div class="cont">
-        <img src="./Assets/Images/e-com_img.PNG" alt="" id="img" width="730px" height="732px">
-        <div class="landercont" style="width: 750px;text-align: center;">
+        <img src="./Assets/Images/e-com_img.PNG" alt="" id="img" height="732px" class="landerimg">
+        <div class="landercont" style="text-align: center;">
             <img src="./Assets/Images/logo_bg.png" alt="" width="100px" height="100px">
             <h3 style="font-size: 3em;color: #043927;">KART ZONE</h3>
             <h2 style="color: black;font-size: 1.8em;">Unbeatable deals await!  Get everything you need in just a few clicks and save big on your favourite items</h2>
@@ -44,6 +44,7 @@
         .landercont{
             position: absolute;
             top: 100px;
+            width: 750px;
 
         }
         .btn{
@@ -53,6 +54,15 @@
             background-color: #004953;
             color: white;
             border-radius: 5px;
+        }
+
+        @media all and (max-width:400px) {
+            .landercont{
+                width: 380px;
+            }
+            .landerimg{
+                display: none;
+            }
         }
 
 
